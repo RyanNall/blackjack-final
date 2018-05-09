@@ -1,0 +1,45 @@
+
+public class Deck{
+   Card[] cards = new Card[52];
+       int i = 0;
+       String[] suits = {"Spades", "Hearts", "Diamonds", "Clubs"};
+       String[] rank = {"Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King"};
+       int [] value = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10};
+   public void initializeDeck(){
+       Card[] cards = new Card[52];
+       int i = 0;
+       String[] suits = {"Spades", "Hearts", "Diamonds", "Clubs"};
+       String[] rank = {"Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King"};
+       int [] value = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10};
+       
+            for (int j = 0; j < 4; j++){
+                for(int k = 0; k < 13; k++){
+                    cards[i] = new Card(value[k], suits[j], rank[k]);
+                    i++;
+                }
+            }
+    }
+         
+   
+
+    public Deck()
+    {
+        
+   }
+
+    public void shuffle(){
+        for(int i = 0; i < 100; i++){
+            Card tempcard = cards[i];
+            int index = (int) Math.random() * 52;
+            cards[i] = cards[index];
+            cards[index] = tempcard;
+        }
+    }
+    public Card deal(){
+        int count = -1;
+        count++;
+        return cards[count];
+        
+        
+    }
+     }
